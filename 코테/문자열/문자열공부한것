@@ -1,0 +1,17 @@
+	public String solution(String str){
+			String answer = "";
+			
+			
+			
+			return answer;
+		}
+		public static void main(String[] args){
+			대소문자변환 T = new 대소문자변환();
+			Scanner kb = new Scanner(System.in);
+			String str=kb.next(); // 문자입력
+			
+			System.out.print(T.solution(str));
+		}
+	}
+
+출저 : 인프런 강의 공부한 내용 
