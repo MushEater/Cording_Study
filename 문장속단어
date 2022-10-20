@@ -1,0 +1,56 @@
+// 주요기능 : str.split("") <-괄호안 내용을 찾을때 마다 전체 스트링을 나눠서 
+//배열에 저장 (괄호안 내용은 저장X)
+
+//indexof() <<  스트링 요소 찾기 없으면 -1 이라는 값을 반환
+//substring(0~3) << 0~3요소를 자름 
+
+
+package 게시판연습;
+
+import java.util.Scanner;
+
+public class 문장속단어 {
+
+	
+		public String solution(String str){
+			String answer = "";
+			int m= Integer.MIN_VALUE;
+			String[] s = str.split(" ");
+			// () 괄호안 내용을 찾을때 마다 전체 스트링을 나눠서 
+			//배열에 저장 (괄호안 내용은 저장X)
+			for(String x : s) {
+				int len=x.length();
+				if(len>m) {
+					m=len;
+					answer=x;
+				}
+			}
+			
+//			int m = Integer.MIN_VALUE, pos;
+//			while((pos=str.indexOf(' '))!=-1) 
+//				//공백이 발견될때까지 돌아감
+//			{
+//				String tmp=str.substring(0, pos);
+//				//tmp -> 0~pos 위치까지 자른 스트링
+//				int len=tmp.length();
+//				if(len>m) {
+//					m=len;
+//					answer=tmp;
+//				}
+//				str=str.substring(pos+1);
+//				
+//			}
+//			if(str.length()>m) answer=str;
+			return answer;
+		}
+		public static void main(String[] args){
+			문장속단어 T = new 문장속단어();
+			Scanner kb = new Scanner(System.in);
+			String str=kb.nextLine(); 
+			// nextLine <- enter 전까지 모두 (공백 포함)
+			// next <- 공백 전까지
+			
+			System.out.print(T.solution(str));
+		}
+	}
+
