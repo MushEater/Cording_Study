@@ -1,0 +1,32 @@
+//주요기능 - 대소문자 구분법
+// if(Character.isUpperCase(x)){대문자}
+
+
+package 게시판연습;
+
+import java.util.Scanner;
+
+public class 대소문자변환 {
+
+	
+		public String solution(String str){
+			String answer = "";
+			char[]t = str.toCharArray();
+			for(char x : str.toCharArray()) {
+				if(Character.isUpperCase(x)) {
+					answer+=Character.toLowerCase(x);
+				}else {
+					answer+=Character.toUpperCase(x);
+				}
+			}
+			return answer;
+		}
+		public static void main(String[] args){
+			대소문자변환 T = new 대소문자변환();
+			Scanner kb = new Scanner(System.in);
+			String str=kb.next(); // 문자입력
+			
+			System.out.print(T.solution(str));
+		}
+	}
+
