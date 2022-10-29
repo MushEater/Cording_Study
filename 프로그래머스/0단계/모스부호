@@ -1,0 +1,25 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class 합성수찾기 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 String answer = ""; 
+		 String letter = ".... . .-.. .-.. ---";
+		 int count=0;
+		 String[] str= letter.split(" ");
+		 String[] morse= {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+		 String alpha = "abcdefghijklmnopqrstuvwxyz";
+		 for(String x: str) {//letter 각각대입
+			for(String y : morse) {//모스부호 대입
+				if(x.equals(y)) {
+					answer += alpha.charAt(count);
+				}
+				else {count++;}
+			} count=0;//초기화
+		 }
+		
+		 System.out.println(answer);
+	}
+}
