@@ -1,0 +1,32 @@
+//주요기능 : Math.abs(x) : 절대값
+
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 20; 
+		int[] array = {10, 25, 15};
+		int answer = 0;
+		int tem=0; int tem2=Integer.MAX_VALUE;
+		int count =0; int arraynum =0;
+		
+		for(int x : array) {
+			tem = Math.abs(x-n);
+			if(tem<tem2) {
+				answer = x;
+			}
+			else if (tem==tem2) {
+				if((array[arraynum]-x>0)) {
+					answer = x;
+				}else {answer = array[arraynum]; }
+			}
+			tem2=tem; arraynum=count;
+			count++;
+		}
+		
+		
+	        System.out.println(answer);
+	}
+}
