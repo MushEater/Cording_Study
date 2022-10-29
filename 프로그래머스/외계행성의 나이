@@ -1,0 +1,25 @@
+//주요기능 : int[] arrNum = Stream.of(String.valueOf(age).split("")).mapToInt(Integer::parseInt).toArray();
+// int값을 각 자리수로 짤라서 배열에 넣음 ex) 23 -> arrNum[0] =2 , arrNum[1] =3
+
+
+import java.util.*;
+import java.util.stream.Stream;
+
+public class 외계행성의나이 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String answer = "";
+		int age = 23; 
+		int count =0;
+		int[] arrNum = Stream.of(String.valueOf(age).split("")).mapToInt(Integer::parseInt).toArray();
+		
+		for(int i=0; i<arrNum.length; i++) { count=0;
+		for(char s='a'; s<='z'; s++) {
+			if(count==arrNum[i]) {answer+= s;}
+			count++;
+			}
+		}
+	        System.out.println(answer);
+	}
+}
