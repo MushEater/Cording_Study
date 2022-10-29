@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String answer = "";
+		String s = "abdc";
+		int count =0;
+		
+		for(int i=0; i<s.length(); i++) { //s 하나씩 대입
+			for(char x : s.toCharArray()) {// 하나씩 비교
+				if(s.charAt(i)==x) {count ++;}
+			}
+			if(count<2) {answer += s.charAt(i);}
+			count=0; //초기화
+		}
+		String[] str = answer.split("");
+		Arrays.sort(str); answer = "";
+		for(String x: str) {
+			answer += x;
+		}
+		
+		
+		
+	    System.out.println(answer);
+	}
+}
