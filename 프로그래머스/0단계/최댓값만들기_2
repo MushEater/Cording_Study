@@ -1,0 +1,20 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class 최댓값만들기_2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int answer = 0; int tem =0;
+		int[] numbers = {10, 20, 30, 5, 5, 20, 5};
+		
+		Arrays.sort(numbers);
+		tem = numbers[0]*numbers[1];
+		answer=numbers[numbers.length-1]*numbers[numbers.length-2];
+		if(tem>answer) {
+			answer= tem;
+		}
+		
+	        System.out.println(answer);
+	}
+}
