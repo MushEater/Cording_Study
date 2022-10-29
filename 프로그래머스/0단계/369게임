@@ -1,0 +1,22 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class 삼육구 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int order = 29423;
+		int answer = 0;
+	
+		int[] arrNum = Stream.of(String.valueOf(order).split("")).mapToInt(Integer::parseInt).toArray();
+		
+		for(int x: arrNum) {
+			if(x!=0) {
+				if(x%3 == 0) {
+				answer++;
+				}
+			}
+		}
+	    System.out.println(answer);
+	}
+}
