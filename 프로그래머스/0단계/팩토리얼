@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 7;
+		int answer = 0;
+		int tem =1;
+		for(int i=1; i<=Integer.MAX_VALUE; i++) {
+			tem *= i;
+			if(tem>n) {
+				answer=i-1;
+				break;
+			}
+		}
+		
+	        System.out.println(answer);
+	}
+}
