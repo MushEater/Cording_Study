@@ -1,0 +1,19 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class 암호해독 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String answer = "";
+		String cipher = "dfjardstddetckdaccccdegk";
+		int code =4;
+		
+		for(int i=0; i<cipher.length(); i++) {
+			if((i+1)%code==0) {answer += cipher.charAt(i);}
+		}
+		
+		
+	    System.out.println(answer);
+	}
+}
