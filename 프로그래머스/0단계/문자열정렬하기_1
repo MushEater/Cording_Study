@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String my_string = "hi12392";
+		
+		
+		int count=0;
+		String[] str = my_string.split("");
+		
+		
+		
+		for(int i=0; i<str.length; i++)	{
+		boolean isNumber = false;
+		try {
+		Integer.parseInt(str[i]);
+		isNumber = true; count++;
+		} catch (NumberFormatException e) {
+		// do nothing
+		}
+		}
+		int[] answer = new int[count];
+		count =0;
+		for(int i=0; i<str.length; i++)	{
+			boolean isNumber = false;
+			try {
+			Integer.parseInt(str[i]);
+			isNumber = true; answer[count] = Integer.parseInt(str[i]);
+			count++;
+			} catch (NumberFormatException e) {
+			// do nothing
+			}
+			}
+		Arrays.sort(answer);
+		
+		
+	        System.out.println(answer);
+	}
+}
