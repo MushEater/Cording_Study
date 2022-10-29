@@ -1,0 +1,19 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=10; int j=50; int k=5;
+		int answer =0;
+		for(int y=i; y<=j; y++) {
+			int[] arrNum = Stream.of(String.valueOf(y).split("")).mapToInt(Integer::parseInt).toArray();
+			for(int x: arrNum) {
+				if(k==x) {answer++;}
+			}
+			
+		}
+	    System.out.println(answer);
+	}
+}
