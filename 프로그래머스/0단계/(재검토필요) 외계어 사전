@@ -1,0 +1,41 @@
+
+//맞긴 했으나, 더 쉬운 방법이 있을것같으니 다시 풀어봐야함
+
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] spell = {"s", "o", "m", "d"};
+		String[] dic = {"moos", "dzx", "smm", "sunmmo", "som"};
+        int answer = 2; int count =0; int tem=0;
+        String[]str = new String [dic.length];
+        
+        for(int a=0; a<dic.length; a++) { //중복 문자 제거
+        	str[a] = "";
+        	for(int i=0; i<dic[a].length(); i++){ // 비교 문자
+	        		if(dic[a].indexOf(dic[a].charAt(i)) == i) {
+	        			str[a] += dic[a].charAt(i);      			
+	        		}
+        	}
+        }
+        
+        for(int i=0; i<str.length; i++) { //dic의 개수
+        	char[] x = str[i].toCharArray();
+        	for(int y=0; y<str[i].length(); y++) {
+        		for(int z=0; z<spell.length; z++) {//spell
+        			char c = str[i].charAt(y);
+        			char s = spell[z].charAt(0);
+        			if(c==s) {count++; 
+        			if(count>=spell.length) {answer=1; break;} 
+        			else{continue;}
+        			}
+        		}
+        	}count=0;
+        }
+
+	    System.out.println(answer);
+	}
+}
