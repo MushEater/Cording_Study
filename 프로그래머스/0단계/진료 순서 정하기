@@ -1,0 +1,32 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] emergency = {30, 10, 23, 6, 100};
+		int[] answer = new int [emergency.length];
+		
+		int[] tmp =  new int [emergency.length];
+		for(int z=0; z<emergency.length; z++) {
+			tmp[z]= emergency[z];
+		}
+		int[] tmp2 = new int [emergency.length];
+		int count =0;
+		Arrays.sort(tmp); //{6,10,23,30,100}
+		
+		for(int z=emergency.length-1; z>=0; z--) {
+			tmp2[count]= tmp[z]; count++;
+		}
+		
+		for(int x=0; x<tmp2.length; x++) {//emergency 돌리기
+			for(int y =0; y<tmp2.length; y++) {// tmp2 돌리기
+				if(emergency[x]==tmp2[y]) {
+					answer[x]=y+1;
+				}
+			}
+		}
+	    System.out.println(answer[0]);
+	}
+}
