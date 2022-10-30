@@ -1,0 +1,22 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int M = 2; int N=5;
+		int answer =0;
+		if(M>N) {
+			answer +=(N-1);
+			answer += ((M-1)*N);
+		}
+		else if(N>M) {
+			answer +=(M-1);
+			answer += ((N-1)*M);
+		}
+		else if(N==M) {answer= N*M-1;}
+		
+	    System.out.println(answer);
+	}
+}
