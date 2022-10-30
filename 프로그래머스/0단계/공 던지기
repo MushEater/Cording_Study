@@ -1,0 +1,25 @@
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] numbers= {1, 2, 3, 4, 5, 6};
+		int k= 5; int count =0; int tem=1;
+		int answer=0;
+		int n = numbers.length;
+		while(k!=count+1) {
+			count++;//공 던짐
+			tem +=2;
+			if(tem>n) {
+				if(tem-n==2) {tem=2;}
+				else if(tem-n==1) {tem=1;}
+			}
+			
+		}
+		answer = numbers[tem-1];
+		
+	    System.out.println(answer);
+	}
+}
