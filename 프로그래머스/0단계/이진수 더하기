@@ -1,0 +1,31 @@
+//주요기능 : String 2진수 : Integer.toBinaryString(int); int-> 2진수 변환
+//  Math.pow(2, n); --> 2의 n 제곱
+import java.util.*;
+import java.util.stream.Stream;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String bin1="1001"; String bin2="1111";
+		String answer = ""; int tem=0; int tem2=0;
+		String b1 = new StringBuilder(bin1).reverse().toString();
+		String b2 = new StringBuilder(bin2).reverse().toString();
+		for(int i=0; i<b1.length(); i++) {
+			if(b1.charAt(i)=='1') {
+				if(i==0) {tem += 1;}
+				else{tem += Math.pow(2, i);
+				}
+			}
+		}
+		for(int i=0; i<b2.length(); i++) {
+			if(b2.charAt(i)=='1') {
+				if(i==0) {tem2 += 1;}
+				else{tem2 += Math.pow(2, i);
+				}
+			}
+		}
+		answer = Integer.toBinaryString(tem+tem2);
+	    System.out.println(answer);
+	}
+}
